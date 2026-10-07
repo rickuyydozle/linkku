@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rickuyy Dozle</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0a1628; }
+
+  /* Background: gradient halus + grid gaming */
+  .bg-scene {
+    position: fixed; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse at 50% 18%, rgba(0, 140, 255, .22), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(0, 90, 200, .18), transparent 50%),
+      #0a1628;
+  }
+  .bg-scene::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(60, 140, 255, .07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(60, 140, 255, .07) 1px, transparent 1px);
+    background-size: 38px 38px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 70%);
+            mask-image: linear-gradient(to bottom, transparent, #000 70%);
+  }
+
+  /* Cincin avatar */
+  .ring {
+    box-shadow: 0 0 0 3px #0a1628, 0 0 0 5px #19b6ff, 0 0 28px rgba(25, 182, 255, .55);
+  }
+
+  .btn { transition: transform .18s ease, box-shadow .18s ease; }
+  .btn:hover, .btn:focus-visible { transform: scale(1.025); outline: none; }
+  .btn-sb:hover, .btn-sb:focus-visible { box-shadow: 0 0 26px rgba(40, 130, 255, .6); }
+  .btn-dc:hover, .btn-dc:focus-visible { box-shadow: 0 0 26px rgba(88, 101, 242, .6); }
+
+  @keyframes pulse-dot { 50% { opacity: .35; } }
+  .dot { animation: pulse-dot 2s infinite; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .dot { animation: none; } }
+</style>
+</head>
+
+<body class="min-h-screen text-white">
+<div class="bg-scene"></div>
+
+<!-- Dekorasi gaming (ikon samar di background) -->
+<i class="fa-solid fa-khanda absolute left-6 top-28 text-2xl text-sky-400/30 -rotate-12" aria-hidden="true"></i>
+<i class="fa-regular fa-circle-dot absolute right-6 top-36 text-3xl text-sky-400/30" aria-hidden="true"></i>
+<i class="fa-regular fa-square absolute left-10 top-80 text-sm text-sky-400/30 rotate-12" aria-hidden="true"></i>
+
+<main class="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center px-6 pb-8 pt-8">
+
+  <p class="flex items-center gap-2 text-[10px] font-semibold tracking-widest text-sky-300/80">
+    <span class="dot h-1.5 w-1.5 rounded-full bg-sky-400"></span> PLAYER ONE
+  </p>
+
+  <!-- ==== AVATAR ====
+       GANTI FOTO AVATAR: ubah isi src di bawah dengan nama file foto Roblox kamu,
+       contoh: src="avatar.png" (upload avatar.png ke folder yang sama dengan index.html)
+       atau isi dengan link gambar (https://...) -->
+  <div class="ring mt-5 h-36 w-36 overflow-hidden rounded-full bg-slate-800">
+    <img id="avatar-img" alt="Avatar Rickuyy Dozle" class="h-full w-full object-cover" src="avatar.png">
+  </div>
+
+  <h1 class="mt-6 text-center text-3xl font-extrabold">Rickuyy Dozle</h1>
+  <p class="mt-1 text-center text-xs text-slate-400">Roblox | Mobile Legends | PUBG Mobile</p>
+
+  <!-- Sapaan dinamis (diatur oleh JavaScript di bawah) -->
+  <h2 id="greeting" class="mt-10 text-2xl font-light">Selamat Pagi</h2>
+  <p class="mt-1 text-xs text-slate-400">welcome to ultras rickuy</p>
+
+  <nav class="mt-8 flex w-full flex-col gap-5">
+
+    <!-- ==== LINK SOCIABUZZ ====
+         GANTI href di bawah dengan link SociaBuzz kamu -->
+    <a href="https://sociabuzz.com/rickuyyy" target="_blank" rel="noopener"
+       class="btn btn-sb relative block rounded-xl bg-gradient-to-br from-sky-500 to-blue-700 p-4">
+      <div class="flex items-center gap-4">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/20 text-2xl font-semibold">S</span>
+        <span class="text-lg font-semibold">Sociabuzz</span>
+      </div>
+      <p class="mt-3 text-xs italic text-white/90">Terimakasih sudah support ❤️</p>
+      <i class="fa-solid fa-arrow-up-right-from-square absolute right-4 top-4 text-sm text-white/80"></i>
+    </a>
+
+    <!-- ==== LINK DISCORD ====
+         GANTI href di bawah dengan link undangan server Discord kamu -->
+    <a href="https://discord.gg/pWwR4v5Zar" target="_blank" rel="noopener"
+       class="btn btn-dc relative block rounded-xl bg-[#5865F2] p-4">
+      <div class="flex items-center gap-4">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/20 text-2xl"><i class="fa-brands fa-discord"></i></span>
+        <span class="text-lg font-semibold">Discord</span>
+      </div>
+      <p class="mt-3 text-xs text-white/90">Jangan lupa bergabung di server kocak ini 😂</p>
+      <i class="fa-solid fa-arrow-up-right-from-square absolute right-4 top-4 text-sm text-white/80"></i>
+    </a>
+
+  </nav>
+
+  <footer class="mt-auto pt-16 text-center">
+    <div class="mx-auto mb-3 h-px w-8 bg-sky-400/40"></div>
+    <p class="text-[11px] text-slate-400">Made with ❤️ by Rickuy</p>
+  </footer>
+</main>
+
+<script>
+  // Sapaan sesuai jam di perangkat pengunjung
+  (function () {
+    var h = new Date().getHours();
+    var text = "Selamat Malam";            // 18:00 - 05:59
+    if (h >= 6 && h < 12) text = "Selamat Pagi";      // 06:00 - 11:59
+    else if (h >= 12 && h < 18) text = "Selamat Siang"; // 12:00 - 17:59
+    document.getElementById("greeting").textContent = text;
+  })();
+</script>
+</body>
+</html>
